@@ -13,17 +13,25 @@
 
 網路上許多回答「後端工程師到底在做什麼？」的帖子，都會說後端負責資料處理的商業邏輯，這裡的邏輯其實與盈利無關，指的是**處理事務的流程、規則**，具體而言是資料如何安置、分類、抓取，和系統如何架構。至於主管電腦與人互動部分的前端，**決定使用者和電腦如何互動**，從使用者看見怎樣的電腦介面，到使用者輸入的訊號連結到電腦資料庫的流程，都是前端負責的部分。
 
-在
 
 **02 學什麼**
-延伸前兩種不同的工作性質，前、後端所採用的工具也各自不同，在後端部分常被提及的是 PHP、JAVA、Ruby、Python 等，前端則有 HTML、CSS、Javascript
+延伸前兩種不同的工作性質，前、後端所採用的工具也各自不同，在後端部分常被提及的是 PHP、JAVA、Ruby、Python 等，前端則有 HTML、CSS、Javascript。
 
-
-
+**未完**
+前端需要帶來優異的網站操作流程
 
 
 
 ## 假設我今天去 Google 首頁搜尋框打上：JavaScript 並且按下 Enter，請說出從這一刻開始到我看到搜尋結果為止發生在背後的事情。
+
+上述動作可被切割為幾個部分：瀏覽器查找標籤、回傳結果、
+
+當我們在搜尋框鍵入字詞後，搜尋結果會被導向距離當下地點最近的 Google 資料中心，資料中心裡成千上萬互相串聯的主機會指派其中一個伺服器負責分配其他伺服器工作，被分配到的伺服器則負責查找 Google早已建立好的索引標籤，完成索引的搜集工作後，分配工作的伺服器回統整結果並回傳至我們所在的瀏覽器。
+
+這是...的部分
+
+另外Google
+
 
 
 
@@ -33,14 +41,13 @@
 
 我找到的資料主要來自（https://ss64.com/osx/），這個網頁按字母排序整理了許多Command Line，快速瀏覽中我看到了以下幾項功能：
 
-1. date：在終端機變更當前的日期與時間，變更的格式如下：
-date -u {month}{day}{hour}{minute}{year}
-**不過括號中必須輸入以UTC為準的二位數字，例如以下**
-date -u 0415122519
-2. default：可以更改使用者偏好，最有名的是永久顯示隱藏檔案，不過更多詳細的設定，可以參考（11...../https://www.makeuseof.com/tag/hidden-mac-settings-defaults-command/）
-3. dig：向 DNS 伺服器索取 host addresses, mail exchanges, nameservers 等相關資訊。
-4. sort：排序文件內容，可鹽山出刪除重複行、空白行的功能。
-5. sudo：允許系統管理員開放部分系統權限給一般使用者，讓取得權限的使用者能進行系統的調整，但要額外注意資訊安全。
+1. `date`：在終端機變更當前的日期與時間  
+格式如下：`date -u {month}{day}{hour}{minute}{year}`，不過括號中必須輸入以UTC為準的二位數字，例如以下`date -u 0415122519`
+
+2. `default`：可以更改使用者偏好，最有名的是永久顯示隱藏檔案，不過更多詳細的設定，可以參考：[11 Hidden Mac Settings You Can Unlock With the Defaults Command] (https://www.makeuseof.com/tag/hidden-mac-settings-defaults-command/）
+3. `dig`：向 DNS 伺服器索取 host addresses, mail exchanges, nameservers 等相關資訊。
+4. `sort`：排序文件內容，可延伸出刪除重複行、空白行的功能。
+5. `sudo`：允許系統管理員開放部分系統權限給一般使用者，讓取得權限的使用者能進行系統調整，但要特別注意開放權限帶來的資訊安全風險。
 
 
 
