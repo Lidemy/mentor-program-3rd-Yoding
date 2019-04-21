@@ -17,7 +17,7 @@
 #####02 將作業檔案新增到本地端的 git 
 >2-1 新增分支：`git branch hw1`  
  2-2 為檔案導入 Git：`branch hw1 ~ git add hw1`  
- 2-3 這時候可使用 git add -a 一次新增所有變更檔案
+ 2-3 這時候可使用 `git add add.` 一次新增所有變更檔案
 
 #####03 通過預檢測、完成本地端檔案更新
 	輸入 Commit：`branch hw1 ~ git commit hw1`  
