@@ -34,15 +34,18 @@ Git的操作流程
 - 但如果你在提交前就想檢查看看自己的步驟是否正確，或忘記自己對 Git的設定，可以用`git status`確認現存工作目錄與暫存區之間的關係。
 
 ####更改檔案資訊
-- 如果你有些檔案只是記錄自己日常的想法、靈感，還沒發展成笑話，但又不想讓 Git 耗費資源追蹤檔案，這時可以創造`.ignore`檔案來屏蔽 Git。首先，輸入`touch .ignore`，再輸入`vi .ignore`進入 vim 編輯器來進行屏蔽檔案的設定，具體的格式可以參考這篇[有些檔案我不想放在 Git 裡面…](https://gitbook.tw/chapters/using-git/ignore.html)。
+- 如果你有些檔案只是記錄自己日常的想法、靈感，還沒發展成笑話，但又不想讓 Git 耗費資源追蹤檔案，這時可以創造`.ignore`檔案來屏蔽 Git。首先輸入`touch .ignore`，再輸入`vi .ignore`進入 vim 編輯器來進行屏蔽檔案的設定，具體的格式可以參考這篇[有些檔案我不想放在 Git 裡面…](https://gitbook.tw/chapters/using-git/ignore.html)。
 
-- 如果你想在 Git 上，直接刪除檔案的話，可以輸入 `rm 檔案名稱`。
+- 如果你想在 Git 上，直接新增或刪除檔案的話，可以分別輸入 `touch 檔案名稱`和`rm 檔案名稱`。
 
 ####撤回 Git
 
 - 如果檔案已不再變更，我們可以移除在 Git 上的版本紀錄的話，可以輸入 `rm -r .git`， Git 就會停止版本追蹤囉！  
 
-- 但如果你想撤回的是已經提交的檔案，那可以參考[剛才的 Commit 後悔了，想要拆掉重做…](https://gitbook.tw/chapters/using-git/reset-commit.html)，使用`git reset指令`。
+- 但如果你想撤回的是已經提交的檔案，那可以使用`git reset hard head~`這樣 Git 就會切回上一個版本，不過只是切回，如果你後來又發現了什麼事...，這個動作也可以撤銷的。（只不過......每次撤銷，還沒被提交的內容都會消失，如果你的記憶力和我一樣不太好，這......是把雙面刃啊。）
+
+- 關於這部分的詳細說明請參考：[剛才的 Commit 後悔了，想要拆掉重做…](https://gitbook.tw/chapters/using-git/reset-commit.html)，使用`git reset指令`。
+
 
 
 
