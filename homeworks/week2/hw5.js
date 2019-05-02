@@ -16,10 +16,6 @@ function repeat(str, times) {
   }
   return print;
 }
-/*
-  寫這題和hw3時，只想到怎麼使用迴圈印出字，
-  沒想到怎麼把字串連起來，卡了好久以後偷偷參考了別人的Code。
-  */
 
 console.log(join('a', '!'));
 console.log(join(['a', 'b', 'c'], '!!!'));
