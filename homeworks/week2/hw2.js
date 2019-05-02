@@ -1,6 +1,6 @@
 function capitalize(str) {
-  const Upp = str.slice(0, 1);
-  return Upp.toUpperCase() + str.slice(1);
+  const upp = str.slice(0, 1);
+  return upp.toUpperCase() + str.slice(1);
 }
 
 console.log(capitalize('hello'));
