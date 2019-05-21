@@ -13,7 +13,7 @@ if (process.argv[2] === 'read') {
     `https://lidemy-book-store.herokuapp.com/books/${process.argv[3]}`,
     (error, response, body) => {
       const json = JSON.parse(body);
-      console.log(`${json.id}${json.name}`);
+      console.log(`${json.id} ${json.name}`);
     },
   );
 }
