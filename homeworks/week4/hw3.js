@@ -9,7 +9,7 @@ const wrong = 'Something was wrong, please check again.';
 switch (input) {
   case 'list':
     request(
-      'https://lidemy-book-store.herokuapp.com/books?_limit=10',
+      'https://lidemy-book-store.herokuapp.com/books?_limit=20',
       (error, response, body) => {
         const json = JSON.parse(body);
         json.forEach((book) => {
@@ -21,7 +21,7 @@ switch (input) {
 
 
   case 'read':
-    request('https://lidemy-book-store.herokuapp.com/books/' + index,
+    request(`https://lidemy-book-store.herokuapp.com/books/${index}`,
       (error, response, body) => {
         const json = JSON.parse(body);
         (response.statusCode === 200) ? console.log(`${json.id} ${json.name}`) : console.log(wrong);
@@ -40,11 +40,10 @@ switch (input) {
     request.post({
       url: 'https://lidemy-book-store.herokuapp.com/books/',
       form: {
-        'id': `${index}`,
-        'name': `${bookname}`,
+        'name': `${process.argv[3]}`,
       },
     }, (err, response) => {
-      (response.statusCode === 200 || 201) ? console.log('新增了名為：' + bookname + '的書') : console.log(wrong);
+      (response.statusCode === 201) ? console.log('新增了名為：' + process.argv[3] + '的書') : console.log(wrong);
     });
     break;
 
@@ -55,8 +54,8 @@ switch (input) {
       form: {
         'name': `${bookname}`,
       },
-    }, (err, response, body) => {
-      response.statusCode === 200 || 201 ? console.log('更新了名為：' + bookname + '的書') : console.log(wrong);
+    }, (err, response) => {
+      (response.statusCode === 200) ? console.log('更新了名為：' + bookname + '的書') : console.log(wrong);
     });
     break;
 
