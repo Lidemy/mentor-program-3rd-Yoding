@@ -48,7 +48,7 @@
 ###本地端 again
 
 #####07  更新本地端 Git 
-> a. 首先，在本地端切回 master 分支 `git checkout branch master`  
+> a. 首先，在本地端切回 master 分支 `git checkout master`  
 > b. 下載遠端 master 分支：`git pull origin master`  
-> c. 刪除作業用分支： `git branch -d hw1`  
+> c. 刪除作業用分支： `git branch hw1 -d`  
 > d. 開好新分支，為下一份作業做準備 `git branch hw2`
