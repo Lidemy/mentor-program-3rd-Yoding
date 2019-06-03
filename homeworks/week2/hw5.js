@@ -1,9 +1,11 @@
 function join(str, concatStr) {
+  if (str.length === 0) {
+    return '';
+  }
+
   let total = str[0];
-  let i = 1;
-  while (i < str.length) {
+  for (let i = 1; i < str.length; i += 1) {
     total += concatStr + str[i];
-    i += 1;
   }
   return total;
 }
