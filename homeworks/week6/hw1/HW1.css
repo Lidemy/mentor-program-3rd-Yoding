@@ -1,0 +1,140 @@
+body {
+    font-family:Arial ;
+}
+nav {
+    background-color: #000000;
+    height: 28px;
+    width: 100%;
+    position: fixed;
+    padding: 10px 10px;
+}
+.logo {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 18pt;
+}
+nav > div {
+    display:inline-block;
+    font-weight: 600;
+}
+.menu {
+    background-color: #000000;
+    color: #AAAAAA;
+    margin: 10px;
+    transition: 
+}
+.menu:hover {
+    color: #DDDDDD;
+}
+/*DO NOT TOUCH*/
+.container {
+    background-color: #F0FFFF;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.topbar {
+    height: 260px;
+    max-width: 960px;
+    padding:100px 50px 10px 50px;
+}
+.headline {
+    font-size: 30pt;
+    font-weight: 600;
+}
+.headtext {
+    max-width: 80%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 16pt;
+}
+.buttom {
+    background-color: #62ddd7;
+    height: 100px;
+    padding: 7px 10px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+.buttom:hover {
+    background-color: #33FFFF;
+}
+/*左側不會隨邊距移動*/
+
+#content {
+    background: #FFFFFF;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+#content > div {
+    padding: 2px 4px;
+}
+
+.box {
+        display: inline-block;
+        max-width: 32%;
+}
+
+.boxhead {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px;
+}
+
+.boxbuttom {
+    background-color: #007799;
+    width: 120px;
+    padding: 5px 10px;
+    margin-top:10px;
+    border-radius: 7px;
+    -webkit-transition: background-color 0.5s;
+    color: white; 
+    text-shadow: black 0.1em 0.1em 0.2em;
+    font-size: 16px;
+    font-weight: 600;
+}
+/*按鈕文字沒置中*/
+
+/*RWD*/
+        @media screen and (max-width: 750px){
+            .topbar{
+                padding-top: 50px;
+                    padding-bottom: 30px;
+            }
+            .content{
+                padding-top:22px;
+            }
+            .box{
+                display: block;
+                max-width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+        @media screen and (max-width: 550px){
+            .topbar{
+                padding-top:70px;
+                padding-bottom: 50px;
+            }
+            .content{
+                padding-top:22px;
+            }
+            .box{
+                display: block;
+                max-width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+.hover2:hover {
+    background-color: #33FFFF;
+}
+
+
+footer{
+    border-top-color: #E3E3E3;
+    border-top-width: 2px;
+    border-top-style: solid;
+    margin-top: 40px;
+}
+/*hr換色*/
