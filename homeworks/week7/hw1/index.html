@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Change</title>
+</head>
+    <style>
+        body {margin: 0px;}
+        .box {
+            width: 1300px;
+            height: 1300px;
+        }
+        p {
+            max-width: 70%;
+            font-size: 30pt;
+            color: Darkgray;
+            position: fixed;
+            left: 20%;
+            top: 100px;
+        }
+    </style>
+
+    <body>
+        <div class="box" style="background-color: white"></div>
+        <p class="message">請在螢幕變色時，點擊以下按鈕</p>
+        <div class="space-btn"></div>
+        <div onclick="alert('a')" ></div>
+    
+    <script type="text/javascript">
+            const timeRandom = Math.floor(Math.random() * 3)+1;
+            const bgcolor = document.querySelector('.box');
+            let start = 0;
+            let end = 0;
+                start = new Date().getTime();
+                /*if (bgcolor.outerHTML !=== '<div class="box" style="background-color: white"></div>) {
+                    console.log("")}
+                }*/
+            window.addEventListener('click', function check() {
+                alert('message')
+                clock();
+                addbtn();
+            })
+// 如何分開正確與錯誤的事件
+            function change() {
+                bgcolor.outerHTML = '<div class="box" style="background-color: LightCyan"></div>';
+            }
+            window.setTimeout('change()', timeRandom * 1000);
+
+            function clock () {
+              end = new Date().getTime();
+              end = ((end - start)*0.001)
+              alert("你用了" + end + "秒   "+' 請再試一次！')
+
+            }
+            function addbtn() {
+              const p = document.querySelector('.message');
+              const item = document.createElement('button');
+                item.innerText = "再玩一次";
+                console.log(item.outerHTML)
+                p.appendChild(item);
+                item.addEventListener('click', function() {window.location.reload()})
+            }
+ //To-do:顏色隨機
+    </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+    * {
+        font-family: regular;
+        font-size: 14pt;
+    }
+    .container {
+        width: 380px;
+        height: 320px;
+        border: 2px solid lightgray;
+        margin: 0 auto;
+    }
+    .btn {
+        width: 80px;
+        height: 30px;
+        border: 2px solid lightgray;
+        margin: 3px 3px;
+        line-height: 30px;
+        text-align: center;
+    }
+    .block {
+        width: 80px;
+        height: 30px;
+    }
+    .view {
+        width: 350px;
+        border: 2px solid lightgray;
+        margin: 15px 15px;
+        font-size: 30pt;
+        text-align: right;
+    }
+    .number-basic {
+        width: 300px;
+        margin: 10px;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        position: relative;
+        top: 0px;
+    }
+    .count {
+        position: relative;
+        left: 280px;
+        top: -205px;
+        margin-bottom: 5px;
+    }
+.equal {
+    background-color: #FFAA33;
+    width: 170px;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+    left: 195px;
+    top: -200px;
+}
