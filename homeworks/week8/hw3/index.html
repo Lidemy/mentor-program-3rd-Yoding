@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>W8H3__Twitch-2nd</title>
+</head>
+<style>
+
+body {
+  background-image: url("https://i.imgur.com/oAf6eLy.jpg");
+}
+
+.container {
+  margin: 0px;
+}
+
+.board {
+  min-width: 350px;
+  max-width: 1300px;
+  margin: 0px 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.board__title {
+  width: 100%;
+  text-align: center;
+  font-size: 50pt;
+  color: white;
+  margin: 30px 0px;
+}
+
+.stream__channel {
+  width: 340px;
+  height: 250px;
+  background-color: black;
+  margin: 1px;
+}
+
+.stream__preview {
+  height: 180px;
+  margin: 3px 10px;
+}
+
+.info {
+  height: 60px;
+  display: flex;
+  margin: 7px 5px;
+}
+
+.stream__logo {
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.text{
+  color: white;
+  font-family: Tahoma, "Arial Narrow", STHeiti;
+  text-decoration: none;
+}
+</style>
+<body>
+  <div class = "container">
+    <div class="board">
+      <div class = "board__title">League of Legends</div>
+      <br>
+    </div>
+  </div>
+<script>
+  function get__stream () {
+    const request = new XMLHttpRequest();
+    const board = document.querySelector('.board');
+    request.onload = () => {
+      if (request.status >= 200 && request.status < 400) {
+        const data = JSON.parse (request.responseText).streams;
+        for (let i = 0 ; i < data.length ; i += 1) {
+          const streamBox = document.createElement('a');
+          streamBox.classList.add('stream__channel');
+          streamBox.setAttribute('href', `${data[i].channel.url}`);
+          board.appendChild(streamBox);
+          streamBox.innerHTML =`
+            <div class="stream__preview">
+            <img src="${data[i].preview.medium}" alt="">
+            </div>
+            <div class="info">
+              <img src="${data[i].channel.logo}" alt="" class="stream__logo">
+              <div class="info__text">
+              <div class="chanel__name text">${data[i].channel.status}</div>
+              <div class="user__name text">${data[i].channel.display_name}</div>
+            </div>`;
+        }
+      } else {
+        console.log('error');
+      }
+    }
+    request.onerror = () => {console.log('error')};
+    request.open('GET', 'https://api.twitch.tv/kraken/streams/?game=League%20of%20Legends&limit=18', true) 
+    //畫面美觀故，只顯示18個實況....
+    request.setRequestHeader('Client-ID', 'v7haqdcnyhs4saarthujs94qw1z8dx',);
+    request.send();
+  } 
+  get__stream();
+</script>
+
+</body>
+</html>

@@ -37,23 +37,22 @@ body {
 .bitian {
     color: red;
 }
-
 .q {
-    /*height: 100px;
-    border: 2px solid black;*/
+    margin: 10px 0px;
+    padding: 20px 0px;
 }
 .tag {
     color: red;
     display: inline;
 }
 form {
-    margin-bottom: 50px;
+    margin: 10px 12px;
 }
-
 .question {
     font-size: 19pt;
     color: #0f0e0e;
     margin-bottom: 20px;
+    margin-left: 15px;
 }
 .exp {
     font-size: 11pt;
@@ -63,7 +62,14 @@ form {
     border: none;
     border-bottom: 2px solid gray;
     background-color: #CCEEFF;
-    margin-bottom: 50px;
+    margin-left: 15px;
+}
+.not_required_ans {
+    width: 300px;
+    border: none;
+    border-bottom: 2px solid gray;
+    background-color: #CCEEFF;
+    margin-left: 15px;
 }
 .btn {
     width: 90px;

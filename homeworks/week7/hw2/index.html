@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>HW2 Google表單仿作</title>
-    <link rel="stylesheet" href="./HW2.css" />
+    <link rel="stylesheet" href="./hw2.css" />
 </head>
 <body>
     <div class="container">
         <div class="container-bgpic">
             <img src="" alt="">
         </div>
-        <div class="form">
+        <form class="form">
             <div class="content">
                 <div class="header">
                     <div class="title">從零到一：程式導師實驗計畫報名表單</div>
@@ -23,71 +23,39 @@
                 <div class="q alert">
                     <div class="question">電子郵件地址<span class="tag">*</span></div>
                     <div class="exp"></div>
-                    <div><input type ="email" placeholder="您的電子郵件" class="ans email"> </input></div>
+                    <input type ="email" placeholder="您的電子郵件" class="ans email" /> 
                 </div>
                 <div class="q alert">
                     <div class="question">暱稱<span class="tag">*</span>
                         <div class="exp">該怎麼稱呼你</div>
                     </div>
-                    <div><input type ="text" placeholder="您的回答" class="ans nickname"> </input></div>
+                    <input type ="text" placeholder="您的回答" class="ans nickname" /> 
                 </div>
-                <div class="q ">
-                    <div class="question">報名類型<span class="tag">*</span></div>
-                    <form>
-                        <div><label><input type="radio" name="level" value="y" class ="exp fee">工程師培養班（每週付出40小時，從零培養到工程師，學費是一個月薪水）</input></label></div>
-                        <div><label><input type="radio" name="level" value="n" class ="exp fee">業餘班（依照個人目標訂定學習計畫，學費一萬五千元）</input></label></div>
-                    </form>
-                </div>
-                <div class="q alert">
-                    <div class="question">是否有程式相關背景？
-                        <span class="tag">*</span>
-                    <div class="exp">範例：無、高中時學過C++、學過一點點網頁前端、目前在資策會上課</div>
+                <div class="level_box ">
+                    <div class="question">報名類型<span class="tag">*</span>
                     </div>
-                    <div><input type ="text" placeholder="您的回答" class="ans background"> </input></div>
+                    <form>
+                        <label>
+                            <input type="radio" name="level" value="level_1" class ="level">工程師培養班（每週付出40小時，從零培養到工程師，學費是一個月薪水）</label><br>
+                        <label>
+                            <input type="radio" name="level" value="level_2" class ="level">業餘班（依照個人目標訂定學習計畫，學費一萬五千元）</label>
+                    </form></div>
+                <div class="q alert">
+                    <div class="question">是否有程式相關背景？<span class="tag">*</span>
+                        <div class="exp">範例：無、高中時學過C++、學過一點點網頁前端、目前在資策會上課</div>
+                    </div>
+                    <input type ="text" placeholder="您的回答" class="ans background" /> 
                 </div>
-
                 <div class="q">
                     <div class="question">其他
                     <div class="exp">其他任何你想講的</div>
                     </div>
-                        <input type ="text" placeholder="您的回答" class="ans others"> </input>
+                        <input type ="text" placeholder="您的回答" class="not_required_ans others" /> 
                 </div>
-                    <div class="btn">送出</div>
+                    <input class="btn" type="submit"/>
             </div>
-        </div>
+        </form>
     </div>
-    <script type="text/javascript">
-        const btn = document.querySelector('.btn')
-        window.addEventListener('click', function check() {
-            const q = document.querySelector('.q');
-            const red = document.createElement('div');
-            //console.log(q[0]);
-            q.appenChild(red);
-        })
-        /*btn.addEventListener('click', function() {
-            let inputContent = document.getElementsByClassName('q');
-            console.log(inputContent)})
-            // 取得輸入內容*/
-
-            //測得input value 長度，若為0，在送出表單前(預檢查)反紅
-    </script>
-
-    <script>
-        btn.addEventListener('click', function() {
-        const alert = document.getElementsByClassName('alert');
-        console.log('已收到....')
-        console.log( document.querySelector('.email').value);
-        console.log(document.querySelector('.nickname').value);
-        console.log(document.querySelector('.fee').value);
-        console.log(document.querySelector('.background').value);
-        console.log(document.querySelector('.others').value);
-
-
-//只能靠queryselector選到？
-        })
-        //const input-value = 
-                    //console.log(alert)
-        //alert.addEventListener('click', function show() {})
-    </script>
+<script src="./hw2.js"type="text/javascript" charset="utf-8" async defer></script>
 </body>
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>W8H1＿抽獎實作</title>
+</head>
+<style>
+
+  * {
+    margin: 10px;
+  }
+
+  .show {
+    width: 500px;
+    height: 500px;
+  }
+
+</style>
+<body>
+    <button class ="btn">試試手氣！</button>
+    <div class ="show" ></div>
+
+<script type="text/javascript">
+const btn = document.querySelector('.btn');
+let prize = "";
+btn.addEventListener('click', () => {send__request()});
+  // result setting
+  function result_page () {
+    const result = document.createElement('div');
+    document.querySelector('.show').appendChild(result);
+    result.innerHTML = `<div><img src ="" style="height:60% width:60%"/></div>`;
+
+    switch (prize) {
+      case 'NONE' :
+        result.innerText= "銘謝惠顧";
+        result.style.color = "white";
+        document.querySelector('body').style.backgroundColor = "black";
+        document.querySelector('img').src = '';
+      break;
+
+      case 'FIRST':
+        result.innerText = "恭喜你中頭獎了！日本東京來回雙人遊！";
+        result.style.color = "#003377";
+        result.style.backgroundColor = "#BBFFEE";
+        document.querySelector('img').src = "./W8H1/PIC_1.jpg";
+        document.querySelector('img').style.width = '60%';        
+      break;
+
+      case 'SECOND':
+        result.innerText = "二獎！90 吋電視一台！";
+        result.style.color = "#003377";
+        result.style.backgroundColor = "#F0FFF0";
+        document.querySelector('img').src = "./W8H1/PIC_3.jpg";
+        document.querySelector('img').style.width = '60%';        
+      break;
+
+      case 'THIRD':
+        result.innerText = "恭喜你抽中三獎：知名 YouTuber 簽名握手會入場券一張，bang！";
+        result.style.color = "#003377";
+        result.style.backgroundColor = "#FFCCCC";
+        document.querySelector('img').src = "./W8H1/PIC_5.png";
+        document.querySelector('img').style.width = '60%';        
+      break;
+    }
+    document.addEventListener('click', () => {
+      document.querySelector('.show').innerHTML = "<div><img src = ' '/></div>";
+      document.querySelector('body').style.backgroundColor = "white";
+    } , 5000);
+}
+//send request
+function send__request() {
+  const request = new XMLHttpRequest();
+  request.onerror = () => {
+    console.log('error');
+  }
+  request.onload = () => {
+    if (request.status >= 200 && request.status < 400) {
+      prize = (JSON.parse(request.responseText).prize);
+      return prize;
+    } else { alert('系統不穩定，請再試一次'); 
+    }
+  };
+  request.open('GET', 'https://dvwhnbka7d.execute-api.us-east-1.amazonaws.com/default/lottery', true);
+  request.send();
+  result_page();
+} 
+send__request();
+</script>
+</body>
+</html>
