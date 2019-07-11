@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW2 Google表單仿作</title>
+    <link rel="stylesheet" href="./hw2.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="container-bgpic">
+            <img src="" alt="">
+        </div>
+        <form class="form">
+            <div class="content">
+                <div class="header">
+                    <div class="title">從零到一：程式導師實驗計畫報名表單</div>
+                    <div class="message">
+                    詳情請參考：<a href="https://medium.com/@hulitw/mentor-program-b5f96ae1eed1">https://medium.com/@hulitw/mentor-program-b5f96ae1eed1 
+                    </a><br>記得填完表單之後還要寫信報名才算成功，兩者缺一不可！
+                    <div class="bitian">*必填</div>
+                    </div>
+                </div>
+                <div class="q alert">
+                    <div class="question">電子郵件地址<span class="tag">*</span></div>
+                    <div class="exp"></div>
+                    <input type ="email" placeholder="您的電子郵件" class="ans email" /> 
+                </div>
+                <div class="q alert">
+                    <div class="question">暱稱<span class="tag">*</span>
+                        <div class="exp">該怎麼稱呼你</div>
+                    </div>
+                    <input type ="text" placeholder="您的回答" class="ans nickname" /> 
+                </div>
+                <div class="level_box ">
+                    <div class="question">報名類型<span class="tag">*</span>
+                    </div>
+                    <form>
+                        <label>
+                            <input type="radio" name="level" value="level_1" class ="level">工程師培養班（每週付出40小時，從零培養到工程師，學費是一個月薪水）</label><br>
+                        <label>
+                            <input type="radio" name="level" value="level_2" class ="level">業餘班（依照個人目標訂定學習計畫，學費一萬五千元）</label>
+                    </form></div>
+                <div class="q alert">
+                    <div class="question">是否有程式相關背景？<span class="tag">*</span>
+                        <div class="exp">範例：無、高中時學過C++、學過一點點網頁前端、目前在資策會上課</div>
+                    </div>
+                    <input type ="text" placeholder="您的回答" class="ans background" /> 
+                </div>
+                <div class="q">
+                    <div class="question">其他
+                    <div class="exp">其他任何你想講的</div>
+                    </div>
+                        <input type ="text" placeholder="您的回答" class="not_required_ans others" /> 
+                </div>
+                    <input class="btn" type="submit"/>
+            </div>
+        </form>
+    </div>
+<script src="./hw2.js"type="text/javascript" charset="utf-8" async defer></script>
+</body>
+</html>

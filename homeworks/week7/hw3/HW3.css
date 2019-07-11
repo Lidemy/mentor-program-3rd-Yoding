@@ -1,0 +1,41 @@
+* {
+    font-family: regular;
+    font-size: 14pt;
+}
+.container {
+    width: 370px;
+    height: 300px;
+    border: 2px solid lightgray;
+    margin: 0 auto;
+}
+.btn {
+    width: 80px;
+    height: 32px;
+    border: 2px solid lightgray;
+    margin: 3px 3px;
+    line-height: 30px;
+    text-align: center;
+     background-color: #FFFFFF;
+}
+.line {
+    width: 344px;
+    margin: 0px 15px;
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+.firstLine {
+    justify-content: space-between;
+}
+.equal {
+    background-color: #FFAA33;
+    width: 166px;
+}
+.view {
+    width: 340px;
+    height: 60px;
+    line-height: 80px;
+    border: 2px solid lightgray;
+    margin: 15px 15px;
+    font-size: 30pt;
+    text-align: right;
+}
