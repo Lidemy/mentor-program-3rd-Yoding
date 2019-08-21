@@ -39,13 +39,13 @@ function chk() {
         normal(alert[i]);
         normal(ans[i]);
       }
+    }  
       // 檢查單選題
       if (level[0].checked === false && level[1].checked === false) {
         showRed(document.querySelector('.level_box'));
       } else {
         normal(document.querySelector('.level_box'));
       }
-    }
     if (level[0].checked) {
       document.querySelector('.level').value = 1;
     } else if (level[1].checked) {

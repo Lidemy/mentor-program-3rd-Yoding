@@ -9,10 +9,9 @@ function AC() {
   numSec = 0;
   temp = [];
   count = [];
-  view.innerText = (temp.join(''));
+  view.innerText = "";
 }
 document.querySelector('.ac').addEventListener('click', () => { AC(); });
-
 // count part
 function btnClick() {
   document.addEventListener('click', (e) => {

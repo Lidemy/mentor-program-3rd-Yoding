@@ -44,7 +44,7 @@
         //計時器
         function counttime () {
           end = new Date().getTime();
-          end = ((end - start)*0.001);
+          end = ((end - start)/1000);
           alert("你用了" + end + "秒   ");
         }
         //警告
@@ -52,22 +52,22 @@
           alert('Too Early!');
           addbtn();
           window.removeEventListener('click', tooEarly, false);
-          window.clearTimeout(changecolor);
+          window.clearTimeout(Colorchange);
         } 
         //隨機時間下變色，變色後觸發計時器
-        function change__color () {
+        function changeColor () {
             body.classList.add("color_changed");
             start = new Date().getTime();
             window.removeEventListener('click', tooEarly, false);
             window.addEventListener('click', gameEnd, false);
           }
-          var gameEnd = function after__change () {
+          var gameEnd = function afterChange () {
             counttime();
             addbtn();
             window.removeEventListener('click', gameEnd, false);
           }
         //運作
-        const changecolor = window.setTimeout((()=> change__color()), 3000);
+        const Colorchange = window.setTimeout(changeColor, 3000);
         window.addEventListener('click', tooEarly, false);
     </script>
     </body>
