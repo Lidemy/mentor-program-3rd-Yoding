@@ -1,126 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>W8H2＿留言板實作</title>
-  <meta name=”viewport” />
-</head>
-<style>
-  .board {
-  width: 500px;
-  border: 2px dashed pink;
-  padding: 10px;
-  }
-  .board__title {
-    font-size: 20pt;
-    font-family: fantasy;
-    color: #DC143C;
-    margin: 5px 20px;
-  }
-  .message {
-    display: inline-flex;
-    margin: 10px;
-  }
-  .userID {
-    text-align: center;
-    color: white;
-  }
-  .text {
-    border: 2px solid darkgray;
-    width: 300px;
-    margin-left: 10px;
-    padding: 10px;
-  }
-  .reply {
-    display: flex;
-    margin-left: 10px;
-    padding: 10px;
-  }
-  .new__message {
-    margin-left: 15px;
-    width: 350px;
-    border: 2px solid pink; 
-  }
-  .btn {
-    background-color: #FF8888;
-    height: 30px;
-    margin: 7px;
-  }
+  <head>
+    <meta charset="UTF-8">
+    <title>W8H2＿留言板實作</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  </head>
 
-</style>
-<body>
-  <div class = "board">
-    <div class = "board__title">Please write down your message...</div>
-    <div></div>
-    <div class = "reply"> 
-    <img src = "../hw1/W8H1/PIC_8.png" alt="" style=" height: 50px;" class="avatar"/>      
-    <input type = "text" class = "new__message">
-    <button class = "btn">submit</button>
+  <style>
+    body {
+      gradient: https://colorzilla.com/gradient-editor/#ffffff+0,f98698+100
+      background: #ffffff; /* Old browsers */
+      background: linear-gradient(45deg, #ffffff 0%,#f98698 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f98698',GradientType=1 );
+      height: 1200px;
+    }
+    .messageboard {
+      width: 450px;
+      border: 2px dashed white;
+      border-radius: 10pt;
+      padding: 10px;
+      margin: 30px auto;
+    }
+
+    .board__title {
+      font-size: 16pt;
+      font-family: fantasy;
+      color: #DC143C;
+      text-align: center;
+      margin: 3px;
+    }
+
+    .message {
+      height: 45px;
+      background-color: rgba(256,256,256,50%);
+      border-left: 5px solid #D87093;
+      display: inline-flex;
+      margin: 10px 30px;
+      align-items: center;
+    }
+
+    .userID {
+      line-height: 45px;
+      font-size: 12pt;
+      margin-left: 10px;
+      color: white;
+    }
+
+    .text {
+      width: 300px;
+      height: auto;
+      margin-left: 10px;
+      padding: 10px;
+    }
+
+    .reply {
+      display: flex;
+      margin-left: 10px;
+      padding: 10px;
+    }
+
+    .message__input {
+      margin-left: 15px;
+      width: 350px;
+      border: 2px solid pink; 
+    }
+
+    .btn {
+      background-color: #FF8888;
+      height: 30px;
+      margin: 7px;
+    }
+
+  </style>
+  <body>
+    <div class = "messageboard">
+      <div class = "board__title">Please write down your message...</div>      
+      <div class = "reply"> 
+        <input class= "message__input"></input>
+        <button class = "btn">submit</button>
+      </div>
+      <div class = "show__message">
+        <div class ="new__message"></div>
+        <section class ="old__message"></section>
+        </div>
+      </div>
     </div>
-    <div class ="old__message"></div>
-</div>
-<script type="text/javascript">
-  const btn = document.querySelector('.btn');
-  const old__message = document.querySelector('.old__message');
-  // 新增新留言
-  function add_message (message) {
-    const post = new XMLHttpRequest();
-    const obj = {
-      id: '',
-      content: '',
-    }
-    obj.content = message;
-    obj.id = Date.now();
-    const json = JSON.stringify(obj);
-    post.open('POST', 'https://lidemy-book-store.herokuapp.com/posts', true)
-    post.setRequestHeader('Content-type', 'application/json')
-    post.onload = () => {
-      console.log('successd')
-    } 
-    post.send(json);
-  } 
-  // 撈取現有留言
-  function get__message () {
-    const request =  new XMLHttpRequest();
-    old__message.innerHTML = "";
-    request.onload = () => {
-      if (request.status >= 200 && request.status < 400) {
-        let data = JSON.parse(request.responseText);
-        // 倒序
-        data.sort(function (a, b) {
-          if (a.id > b.id) {
-            return -1;
-          } else if (a.id < b.id) {
-            return 1;
-          }
-        })
-        // 前20條留言
-        for (let i = 0 ; i < 20; i += 1) {
-          const userID = data[i].id;
-          const content = data[i].content;
-          const div = document.createElement('div');
-          old__message.appendChild(div);
-          div.classList.add('message')
-          div.innerHTML=`<div class = "message"><div class = "user"><img src = "../hw1/W8H1/PIC_6.png" alt="" style="width: 80px;" class="avatar"/><div class = "userID">${userID}</div></div><div class = "text">${content}</div></div>`
-        }
-      }
-    }
-  request.onerror = () => {console.log('error')};
-  request.open('GET', 'https://lidemy-book-store.herokuapp.com/posts?', true);
-    request.send();
-  } 
-  //Fuction Running
-  get__message ();
-
-  btn.addEventListener('click', () => {
-    let t1 = document.querySelector('.new__message').value;
-    add_message(t1);
-    setTimeout(() => {
-      document.querySelector('.new__message').value= " ";
-      get__message();
-
-    }, 2000);
-  })
-  </script>
-</body>
+    <script src="./w8h2.js"></script>
+  </body>
 </html>

@@ -15,20 +15,24 @@
     height: 500px;
   }
 
+  .hide {
+    display: none;
+  }
+            btn.innerText = "再試一次";
 </style>
 <body>
     <button class ="btn">試試手氣！</button>
-    <div class ="show" ></div>
+    <div class ="show" ><img></div>
 
 <script type="text/javascript">
 const btn = document.querySelector('.btn');
 let prize = "";
-btn.addEventListener('click', () => {send__request()});
   // result setting
-  function result_page () {
+  function resultPage () {
     const result = document.createElement('div');
     document.querySelector('.show').appendChild(result);
     result.innerHTML = `<div><img src ="" style="height:60% width:60%"/></div>`;
+      btn.classList.add('hide');
 
     switch (prize) {
       case 'NONE' :
@@ -43,7 +47,7 @@ btn.addEventListener('click', () => {send__request()});
         result.style.color = "#003377";
         result.style.backgroundColor = "#BBFFEE";
         document.querySelector('img').src = "./W8H1/PIC_1.jpg";
-        document.querySelector('img').style.width = '60%';        
+        document.querySelector('img').style.width = '60%';
       break;
 
       case 'SECOND':
@@ -61,30 +65,31 @@ btn.addEventListener('click', () => {send__request()});
         document.querySelector('img').src = "./W8H1/PIC_5.png";
         document.querySelector('img').style.width = '60%';        
       break;
+
+      default:
+        alert('系統不穩定，請再試一次');
+        break;
     }
     document.addEventListener('click', () => {
-      document.querySelector('.show').innerHTML = "<div><img src = ' '/></div>";
+      document.querySelector('.show').innerHTML = "<div><img/></div>";
       document.querySelector('body').style.backgroundColor = "white";
     } , 5000);
 }
 //send request
-function send__request() {
+function sendRequest() {
   const request = new XMLHttpRequest();
-  request.onerror = () => {
-    console.log('error');
-  }
+  request.open('GET', 'https://dvwhnbka7d.execute-api.us-east-1.amazonaws.com/default/lottery', true);
+  request.onerror = () => {console.log('error');}
   request.onload = () => {
     if (request.status >= 200 && request.status < 400) {
       prize = (JSON.parse(request.responseText).prize);
-      return prize;
+      resultPage();
     } else { alert('系統不穩定，請再試一次'); 
     }
   };
-  request.open('GET', 'https://dvwhnbka7d.execute-api.us-east-1.amazonaws.com/default/lottery', true);
   request.send();
-  result_page();
 } 
-send__request();
+btn.addEventListener('click', sendRequest);
 </script>
 </body>
 </html>

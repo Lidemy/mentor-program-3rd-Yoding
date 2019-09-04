@@ -1,0 +1,159 @@
+  body {
+    background-color: #DDDDDD;
+    font-family: PMingLiU, DFKai-SB;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  nav {
+    width: 100%;
+    background-color: #008B8B;
+    color: white;
+    padding: 10px;
+    display: inline-flex;
+  }
+
+  .page__title {
+    width: 120px;
+    font-family: Tahoma;
+    font-size: 20px;
+  }
+
+  .alert__info {
+    width: 60%;
+    line-height: 14pt;
+    margin: 4px 5px;
+  }
+
+  .accountInfo > * {
+    border-bottom: 1.5px solid white;
+    font-size: 12pt;
+    padding: 5px;
+    margin: 5px;
+  }
+
+  button {
+    background-color: #DCDCDC;
+    padding: 3px;
+    font-family: STHeiti;
+  }
+
+  .container {
+    width: 100%;
+  }
+  
+  .message__board {
+    width: 600px;
+    height: 1500px;
+    background-color: #F5F5F5;
+    margin: 30px auto;
+  }
+
+  .board__title { /*晚點來設定 absolute 位置*/
+    width: 90px;
+    height: 30px;
+    padding: 15px 20px;
+    font-size: 16pt;
+    font-weight: 0;
+    margin: 0 auto;
+  }
+
+  .message__number {
+    color: #008B8B;
+  }
+
+  .login__btn {
+    background-color: #DCDCDC;
+    width: 500px;
+    height: 50px;
+    margin: 0 auto;
+  }
+
+  .login__reminder {
+    width: 100px;
+    font-family: STHeiti;
+    font-size: 12pt;
+    line-height: ;
+    padding:10px;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: baseline;
+    border-bottom: 3px solid #008B8B;
+  }
+
+  .reply__section {
+    margin: 0px 50px;
+  }
+
+  .reply__input {
+    width: 500px;
+    height: 150px;
+    font-size: 14pt;
+    margin:10px 0px;
+    box-sizing: border-box;
+    border: 3px solid #008B8B;
+    text-align: right;
+    vertical-align: bottom;
+  }
+
+  .reply__username {
+    width: 500px;
+    border: none;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+/*無法讓placeholder字樣置底*/
+  input[type="text"]::placeholder {
+    text-align: ;
+  }
+
+  .submit__btn {
+    width: 500px;
+    background-color: #DCDCDC;
+    padding: 5px;
+    margin: 10px 0px;
+    font-family: STHeiti;
+  }
+
+  .message__section {
+    background-color: #F5F5F5;
+    margin: 10px;
+  }
+
+  .info {
+    width: 510px;
+    color: #008B8B;
+    margin-left: 3px;
+    margin-bottom: 5px;
+    display: inline-flex;
+  }
+
+  .message {
+    width: 500px;
+    margin: 0 auto;
+    padding: 15px 5px;
+    border-bottom: 2px solid #48D1CC;
+    font-size: 11pt;
+  }
+
+  .nickname{
+    width: 150px;
+    font-size: 16pt;
+    font-family: Papyrus;
+    font-weight: 600;
+  }
+  .timeStamp{
+    margin-left: 300px;
+    font-size: 10pt;
+
+  }
+
+  .hidden {
+    display: none;
+  }
