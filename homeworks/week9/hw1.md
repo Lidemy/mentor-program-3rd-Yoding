@@ -3,28 +3,20 @@
 
 | 欄位名稱 | 欄位型態 | 說明 |設定|
 |--------|--------|--------|----|
-|user-id|INT(10)|使用者 id|Unique 、AI|
+|user-id|INT(10)|使用者編號|Unique 、AI|
 |username|VARCHAR(16)|使用者名稱|Unique|
 |nickname|VARCHAR(32)|暱稱||
-|password|VARCHAR(16)||
+|password|VARCHAR(16)|密碼|
 
 資料庫名稱：yoding_comments
 
 | 欄位名稱 | 欄位型態 | 說明 |設定|
 |----------|----------|------|---|
-|message-id|INT(10)|留言編號||
+|message-id|INT(10)|留言編號|Unique 、AI|
 |user-id|INT(10)|使用者編號||
-|content|TEXT(1000)|留言內容||
+|content|TEXT(100)|留言內容||
 |created_at|DATETIME|時間戳記||
-|hidden|INT(1)|刪除標記||UNDO
-
-資料庫名稱：yoding_nickname（待做）
-
-| 欄位名稱 | 欄位型態 | 說明 |設定|
-|----------|----------|------|---|
-|user-id|INT(10)|使用者編號|Unique 、AI|
-|nickname|VARCHAR(32)|使用者暱稱||
-
+|hidden|INT(1)|刪除標記|待做|
 
 ### 頁面架構
 

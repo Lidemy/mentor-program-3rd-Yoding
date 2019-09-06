@@ -1,6 +1,6 @@
 <?PHP
-  setcookie(name, "", time()-3600);
-  $_SESSION['value'] = '';
+  // 清除cookie
+  setcookie("userID", " ", time()+1);
+  setcookie("nickname", " ", time()+1);
   header('Location: ./login.php');
-  //清除cookie
 ?>

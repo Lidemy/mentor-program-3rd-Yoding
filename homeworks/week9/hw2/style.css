@@ -4,36 +4,49 @@
     margin: 0;
   }
 
+  .container{
+    width: 100%;
+    min-width: 650px;
+  }
+
   a {
     text-decoration: none;
-    color: black;
+    color: white;
+    justify-content: space-between;
   }
 
   nav {
     width: 100%;
     background-color: #008B8B;
     color: white;
-    padding: 10px;
-    display: inline-flex;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
   }
 
   .page__title {
-    width: 120px;
+    width: 100px;
     font-family: Tahoma;
     font-size: 20px;
+    margin: 0 10px;
   }
 
   .alert__info {
-    width: 60%;
-    line-height: 14pt;
-    margin: 4px 5px;
+    line-height: 16pt;
+    padding-top: 4px;
+    margin: 4px 10px;
+  }
+
+  .accountInfo {
+    width: 150px;
+    padding-top: 7px;
   }
 
   .accountInfo > * {
     border-bottom: 1.5px solid white;
     font-size: 12pt;
     padding: 5px;
-    margin: 5px;
+    margin: 0px 10px;
   }
 
   button {
@@ -42,15 +55,11 @@
     font-family: STHeiti;
   }
 
-  .container {
-    width: 100%;
-  }
-  
   .message__board {
     width: 600px;
-    height: 1500px;
     background-color: #F5F5F5;
     margin: 30px auto;
+    padding-bottom: 30px;
   }
 
   .board__title { /*晚點來設定 absolute 位置*/
@@ -60,10 +69,6 @@
     font-size: 16pt;
     font-weight: 0;
     margin: 0 auto;
-  }
-
-  .message__number {
-    color: #008B8B;
   }
 
   .login__btn {
@@ -108,11 +113,6 @@
     text-align: center;
   }
 
-/*無法讓placeholder字樣置底*/
-  input[type="text"]::placeholder {
-    text-align: ;
-  }
-
   .submit__btn {
     width: 500px;
     background-color: #DCDCDC;
@@ -148,12 +148,38 @@
     font-family: Papyrus;
     font-weight: 600;
   }
+
   .timeStamp{
     margin-left: 300px;
     font-size: 10pt;
-
   }
 
   .hidden {
     display: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+  .page__title {
+    margin-left: 5px;
+  }
+
+  .alert__info {
+    width: 57%;
+    line-height: 12pt;
+    margin: 4px 5px;
+  }
+
+  .accountInfo > * {
+    border-bottom: 1.5px solid white;
+    font-size: 12pt;
+    line-height: 14pt;
+    padding: 5px;
+    margin: 5px;
+  }
+
+  .accountInfo {
+    position: relative;
+    right: -60px;
+  }
+
   }

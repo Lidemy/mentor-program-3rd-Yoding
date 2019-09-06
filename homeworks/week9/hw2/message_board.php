@@ -15,9 +15,8 @@
       </div>
       <div class="accountInfo">
         <?php
-          session_start();
-        if ($_SESSION['value'] == 123) {
-          echo '<span class= "logined__username">' . $_SESSION["username"] . '</span>';
+        if(isset($_COOKIE["userID"])) {
+          echo '<span class= "logined__username">' . $_COOKIE["nickname"] . '</span>';
         } else {
           header('Location: ./login.php');
         }
@@ -39,8 +38,13 @@
         <div class="old__message"></div>
         <?php
         require_once('./conn.php');
-        $sql = 
-        'SELECT * from message ORDER BY created_at DESC';
+
+        $sql = "SELECT * 
+          FROM yoding_comments 
+          INNER JOIN yoding_users 
+          ON yoding_comments.userID = yoding_users.userID
+          ORDER BY created_at DESC LIMIT 50";
+
         $result = $conn->query($sql);
           if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()){
