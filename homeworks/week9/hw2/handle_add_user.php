@@ -13,12 +13,6 @@
     echo "<script>alert('請確認兩次密碼輸入均相同')</script>";
     die('請返回上一頁');
   }
-// 連線設定
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  $conn->query('SET NAMES UTF8');
-  if ($conn->connect_error) {
-    die("connection failed:" . $conn->connect_error);
-  }
 // 帳號重複檢查
   $sql_account_check = "SELECT * FROM yoding_users 
                       WHERE username = '$set_user'";
