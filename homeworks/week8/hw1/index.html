@@ -18,12 +18,11 @@
   .hide {
     display: none;
   }
-            btn.innerText = "再試一次";
+
 </style>
 <body>
     <button class ="btn">試試手氣！</button>
     <div class ="show" ><img></div>
-
 <script type="text/javascript">
 const btn = document.querySelector('.btn');
 let prize = "";
@@ -32,7 +31,7 @@ let prize = "";
     const result = document.createElement('div');
     document.querySelector('.show').appendChild(result);
     result.innerHTML = `<div><img src ="" style="height:60% width:60%"/></div>`;
-      btn.classList.add('hide');
+
 
     switch (prize) {
       case 'NONE' :
@@ -70,8 +69,10 @@ let prize = "";
         alert('系統不穩定，請再試一次');
         break;
     }
+
+    btn.innerText ="再試一次";
     document.addEventListener('click', () => {
-      document.querySelector('.show').innerHTML = "<div><img/></div>";
+      document.querySelector('.show').innerHTML = `<div><img></div>`;
       document.querySelector('body').style.backgroundColor = "white";
     } , 5000);
 }
@@ -90,6 +91,7 @@ function sendRequest() {
   request.send();
 } 
 btn.addEventListener('click', sendRequest);
+
 </script>
 </body>
 </html>

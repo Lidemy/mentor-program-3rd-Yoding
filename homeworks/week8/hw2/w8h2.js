@@ -20,7 +20,7 @@ function renderMessage(data) {
 function getMessage() {
   const limit = '_limit=20';
   const sort = '&_sort=id&_order=desc';
-  request.open('GET', `https://lidemy-book-store.herokuapp.com/posts?'=${limit}${sort}`, true);
+  request.open('GET', `https://lidemy-book-store.herokuapp.com/posts?${limit}${sort}`, true);
   request.onload = () => {
     if (request.status >= 200 && request.status < 400) {
       const data = JSON.parse(request.responseText);
@@ -48,7 +48,8 @@ submit.onclick = () => {
       newMessage.classList.add('message');
       newMessage.innerHTML = `<div class="userID">${finalId} : </div>`
                             + `<div class="text">${inputValueTemp}</div>`;
-      document.querySelector('.new__message').appendChild(newMessage);
+      document.querySelector('.new__message').prepend(newMessage);
+      finalId += 1;
     } else {
       alert(`error: ${request.status}`);
     }
