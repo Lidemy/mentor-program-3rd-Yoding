@@ -93,7 +93,7 @@
           ?>
           <div class="pagination">
           <?php
-          // <<
+          // print las page
           echo ($page_now > 1) ? 
           "<a href='?page=" .($page_now-1) ."' class='page'>&laquo;</a>" : '';
           // print pages
@@ -103,13 +103,13 @@
             echo ($i == $page_now) ? "class='page active'>" : "class='page'>";
             echo $i . "</a>";
           }
-          // >>
+          // print next page
             echo ($page_now < $page_num) ? 
             "<a href='?page=" .($page_now+1) ."' class='page'>&raquo;</a>" : '';
           ?>
           </div>
         </div>
-    <!--資料序列-->
+    <!--資料總數-->
           <?php
             echo "<div class = data_footer>";
             echo 'message ' . $page_start . ' ~ ';

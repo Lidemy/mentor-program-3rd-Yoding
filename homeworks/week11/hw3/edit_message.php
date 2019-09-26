@@ -1,5 +1,5 @@
 <?php
-  require_once("./conn.php");
+  require_once('./conn.php');
   $id = $_GET['id'];
   $sql = "SELECT * FROM yoding_comments where message_id =" . $id;
   $result = $conn->query($sql);
