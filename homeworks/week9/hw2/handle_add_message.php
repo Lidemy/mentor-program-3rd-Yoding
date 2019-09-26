@@ -6,12 +6,6 @@
   if (empty($content)) {
     die('您有欄位空白，請填寫內容');
   }
-// DB連線
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  if ($conn->connect_error) {
-    die("connection failed:" . $conn->connect_error);
-  };
-  $conn->query('SET NAMES UTF8');
 // 建置留言
   $sql = "INSERT INTO yoding_comments (userID, content, hidden) VALUES('$userID', '$content', '0')";
   $result = $conn->query($sql);

@@ -14,19 +14,18 @@
     die('請返回上一頁');
   }
 // 帳號重複檢查
-  $sql_account_check = "SELECT * FROM yoding_users 
-                      WHERE username = '$set_user'";
-  if($conn->query($sql_account_check)->num_rows > 0) {
+  $sql = "SELECT * form users WHERE user = '$set_user'";
+  if($conn->query($sql)->num_rows > 0) {
     echo "<script>alert('此帳號已註冊')</script>";
     die('請返回上一頁');
+    header('Location: ./login.php');
   }
 // 正式建置會員資料
   $sql = "INSERT INTO yoding_users(username, nickname, password) 
           VALUES('$set_user', '$nickname', '$set_password')";
-  $result = $conn->query($sql);
-  if($result) {
-    header('Location: ./login.php');
+  if($conn->query($sql)$) {
+    header('Location: ./message_board.php');
   } else {
-    echo "failed, " . $conn->error;
+    echo "Failed, " . $conn->error;
   }
 ?>

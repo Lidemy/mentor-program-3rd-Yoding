@@ -19,14 +19,15 @@
   if($conn->query($sql_account_check)->num_rows > 0) {
     echo "<script>alert('此帳號已註冊')</script>";
     die('請返回上一頁');
+  } else {
+    $hashed_password = password_hash($set_password, PASSWORD_DEFAULT);
   }
 // 正式建置會員資料
   $sql = "INSERT INTO yoding_users(username, nickname, password) 
-          VALUES('$set_user', '$nickname', '$set_password')";
-  $result = $conn->query($sql);
-  if($result) {
+          VALUES('$set_user', '$nickname', '$hashed_password')";
+  if($conn->query($sql)) {
     header('Location: ./login.php');
   } else {
-    echo "failed, " . $conn->error;
+    echo "Failed, " . $conn->error;
   }
 ?>
