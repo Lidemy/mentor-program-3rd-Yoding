@@ -1,0 +1,101 @@
+  body {
+    margin: 0px;
+    background-color: #F0EFE9;
+    font-family: Comic Sans MS;
+  }
+
+button {
+  border: none;
+  margin: 0px 10px;
+  background-color: #FFFFFF;
+  padding: 0px;
+}
+
+.float__board {
+    width: 300px;
+    height: 400px;
+    padding: 15px;
+    margin: 0 auto;
+    margin-top: 80px;
+    border-radius: 5px;
+    background-color: #FFFFFF;  
+}
+
+.input__area {
+    width: 300px;
+    padding: 15px;
+    margin: 0px auto;
+    background-color: #FFFFFF;
+    position: relative;
+    top: -5px;
+    border-radius: 5px;
+}
+
+.date__info {
+  height: 13%;
+  padding: 10px;
+  border: 2px solid #DDDDDD;
+  border-radius: 5px;
+}
+
+.day{
+  font-size: 20pt;
+}
+
+.item__list {
+  height: 70%;
+  margin-top: 10px;
+}
+
+.item {
+width: 90%;
+padding: 5px;
+height: 10%;
+border-bottom: 3px solid #DDDDDD;
+display: inline-flex;
+}
+
+.item__desc {
+width: 75%;
+display: inline-block;
+margin-left: 10px;
+}
+
+/*無法work的css設定？？？*/
+.opt {
+  height: 20px;
+  width: 20px;
+  border: 2px solid #DDDDDD;
+}
+
+.circle {
+  border-radius: 50%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.add__btn {
+  background-color: #4ED998;
+  width: 30pt;
+  height: 30pt;
+  line-height: 30pt;
+  font-size: 30pt;
+  margin-left: 120px;
+}
+
+form {
+  margin: 0px 10px;
+}
+
+input{
+  width: 220px;
+  height: 20px;
+  border: 2px solid #DDDDDD;
+  border-radius: 5px;
+
+}
+
+.submit__btn {
+  background-color: #4ED998;
+  padding: 5px;
+  }
