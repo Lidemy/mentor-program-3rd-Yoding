@@ -15,7 +15,6 @@ function addItemSql() {
   }
 }
 
-
 function printItem($desc, $id) {
   echo "<div class='item'>";
   echo "<button class='del__btn circle opt'>X</button>";
@@ -36,7 +35,4 @@ function getUndoItem($limit, $conn){
     }
   } else { echo "No result.";}
 }
-
-
-
 ?>

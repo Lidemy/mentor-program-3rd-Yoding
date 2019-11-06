@@ -50,37 +50,29 @@
       <button class='check__btn circle opt'> O </button>
       </div>`;
     }
-
     function addItem($item) {
       $(".item__list").append(printItem($item, 0));
       $("#desc").val('');
     }
-  // 標記已完成事項，還得調整事件觸發後的文字部分特效
     $(document).ready(function(){
-
       $(".check__btn").click(function(event){
         $(event.target).css("color", "red");
         $(event.target).html("<div>V</div>");
       });
-
     // 新增item
       $("#desc").keydown(function(e){
         if(e.key === 'Enter'){
-          // 這裡的 id 待補
+          // 這裡的 SQL用 id 待補
           addItem(e.target.value);
         }
       });
-
       $('.item__list').click(function(e) {
-        //console.log(e.target);
         const element = $(e.target);
         if(element.hasClass('del__btn')) {
            element.parent().remove();
          }
         }
       );
-
-
     });
   </script>
 </body>
